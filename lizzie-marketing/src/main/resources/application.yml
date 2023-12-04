@@ -1,0 +1,29 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: lizzie-marketing
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 117.72.41.145:8848
+      config:
+        server-addr: 117.72.41.145:8848
+
+# Dubbo Application
+dubbo:
+  # Dubbo Protocol
+  protocol:
+    name: dubbo
+    ## Random port
+    port: -1
+  ## Dubbo Registry
+  registry:
+    address: nacos://117.72.41.145
+    port: 8848
+  application:
+    name: lizzie-marketing
+  scan:
+    #这里是表明RPC接口包的package
+    base-packages: com.luckk.lizzie.service.impl
